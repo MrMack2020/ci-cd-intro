@@ -32,7 +32,7 @@ jobs:
       name: 'Checkout repository'
 
     - name: Configure AWS Credentials
-      uses: aws-actions/configure-aws-credentials@1c58a3a8518e8759bf075b76b750d4f2df264fcd
+      uses: aws-actions/configure-aws-credentials@1v2
       with:
         role-to-assume: arn:aws:iam::506857912201:role/OIDC_actions_EB_deployment
         role-session-name: ElasticBeanstalkDeployment
