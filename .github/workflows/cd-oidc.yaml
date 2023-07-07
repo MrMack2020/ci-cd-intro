@@ -1,6 +1,6 @@
 name: OIDC Continuous Deployment
 
-# This workflow is triggered whenever commits are pushed to the main branch
+# This workflow is triggered whenever commits are pushed to the main branch and from the web folder
 on:
   push:
     branches:
@@ -32,11 +32,15 @@ jobs:
       name: 'Checkout repository'
 
     - name: Configure AWS Credentials
-      uses: aws-actions/configure-aws-credentials@05b148adc31e091bafbaf404f745055d4d3bc9d2
+      uses: aws-actions/configure-aws-credentials@1c58a3a8518e8759bf075b76b750d4f2df264fcd
       with:
-        role-to-assume: arn:aws:iam::730880032795:role/OIDC_Link--EB-deployment
+        role-to-assume: arn:aws:iam::506857912201:role/OIDC_actions_EB_deployment
         role-session-name: ElasticBeanstalkDeployment
         aws-region: eu-west-2
+
+    - name: Sts GetCallerIdentity
+      run: |
+         aws sts get-caller-identity
 
     - name: Deploy changes
       run: |
