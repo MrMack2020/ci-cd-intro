@@ -39,11 +39,13 @@ jobs:
         aws-region: eu-west-2
 
     - name: Sts GetCallerIdentity
-      run: |
-         aws sts get-caller-identity
+      run: aws sts get-caller-identity
 
     - name: Install brew
       run: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+    - name: Install GCC
+      run: brew install gcc
 
     - name: Deploy changes
       run: |
