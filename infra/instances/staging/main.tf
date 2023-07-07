@@ -1,9 +1,9 @@
 terraform {
   backend "remote" {
-    organization = "glich-stream"
+    organization = "red30-29"
 
     workspaces {
-      name = "ci-cd-staging"
+      name = "VCS-workspace"
     }
   }
 
@@ -66,7 +66,7 @@ resource "aws_instance" "staging_cicd_demo" {
   key_name               = aws_key_pair.staging_key.key_name
 
   tags = {
-    "Name" = "staging_cicd_demo-${random_id.server.hex}"
+    "Name" = "testing_ci-cd-${random_id.server.hex}"
   }
 }
 
