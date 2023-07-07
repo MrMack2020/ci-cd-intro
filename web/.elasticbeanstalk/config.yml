@@ -6,7 +6,7 @@ global:
   application_name: ci-cd-intro
   branch: null
   default_ec2_keyname: aws-eb
-  default_platform: Node.js 16 running on 64bit Amazon Linux 2
+  default_platform: Node.js 18 running on 64bit Amazon Linux 2
   default_region: eu-west-2
   include_git_submodules: true
   instance_profile: null
